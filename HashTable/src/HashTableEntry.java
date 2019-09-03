@@ -22,8 +22,28 @@ public class HashTableEntry<K, V> implements Entry<K, V> {
 
 	@Override
 	public V setValue(V value) {
-		// TODO Auto-generated method stub
-		return null;
+	   
+		V oldValue = this.value;
+		this.value = value;
+		return oldValue;
+	}
+	
+	@Override
+	public String toString() {
+	  
+//	    String stringResults = "{ " + getKey() + ": " + getValue() + "}";
+//	    
+//	    return stringResults;
+	    
+	    StringBuilder results = new StringBuilder();
+	    
+	    results.append("{ ");
+	    results.append(getKey());
+	    results.append(":");
+	    results.append(getValue());
+	    results.append("}");
+	    
+	    return results.toString();
 	}
 
 }
